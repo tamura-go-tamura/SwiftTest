@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D606519A2C073E1A0009F4E5 /* SpeedmeterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */; };
 		D606519C2C073E370009F4E5 /* SpeedmeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606519B2C073E370009F4E5 /* SpeedmeterView.swift */; };
+		D606519E2C073FFD0009F4E5 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606519D2C073FFD0009F4E5 /* Triangle.swift */; };
 		D6CBD0F72C061B3C0038466A /* SwiftTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD0F62C061B3C0038466A /* SwiftTestApp.swift */; };
 		D6CBD0F92C061B3C0038466A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD0F82C061B3C0038466A /* ContentView.swift */; };
 		D6CBD0FB2C061B3D0038466A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6CBD0FA2C061B3D0038466A /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedmeterStyle.swift; sourceTree = "<group>"; };
 		D606519B2C073E370009F4E5 /* SpeedmeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedmeterView.swift; sourceTree = "<group>"; };
+		D606519D2C073FFD0009F4E5 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		D6CBD0F32C061B3C0038466A /* SwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CBD0F62C061B3C0038466A /* SwiftTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestApp.swift; sourceTree = "<group>"; };
 		D6CBD0F82C061B3C0038466A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				D6CBD0FC2C061B3D0038466A /* Preview Content */,
 				D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */,
 				D606519B2C073E370009F4E5 /* SpeedmeterView.swift */,
+				D606519D2C073FFD0009F4E5 /* Triangle.swift */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				D606519C2C073E370009F4E5 /* SpeedmeterView.swift in Sources */,
 				D6CBD0F92C061B3C0038466A /* ContentView.swift in Sources */,
 				D6CBD1242C061C520038466A /* Theme.swift in Sources */,
+				D606519E2C073FFD0009F4E5 /* Triangle.swift in Sources */,
 				D6CBD0F72C061B3C0038466A /* SwiftTestApp.swift in Sources */,
 				D606519A2C073E1A0009F4E5 /* SpeedmeterStyle.swift in Sources */,
 			);

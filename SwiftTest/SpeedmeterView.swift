@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 struct SpeedmeterView: View {
  
-    @State private var currentSpeed = 140.0
+    @State private var currentSpeed = 100.0
  
     var body: some View {
         Gauge(value: currentSpeed, in: 0...200) {

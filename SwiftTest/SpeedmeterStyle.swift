@@ -25,6 +25,13 @@ struct SpeedometerGaugeStyle: GaugeStyle {
                 .trim(from: 0, to: 0.75)
                 .stroke(Color.black, style: StrokeStyle(lineWidth: 10, lineCap: .butt, lineJoin: .round, dash: [1, 34], dashPhase: 0.0))
                 .rotationEffect(.degrees(135))
+            
+            Triangle()
+               .fill(Color.red)
+               .frame(width: 20, height: 150)
+               .offset(x:5, y: -70) // Adjust based on your gauge size
+               .rotationEffect(.degrees(-137.0 + (270.0 * configuration.value)))
+            
  
             VStack {
                 configuration.currentValueLabel
