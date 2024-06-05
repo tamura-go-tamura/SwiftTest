@@ -17,7 +17,6 @@
 		D6CBD1082C061B3D0038466A /* SwiftTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD1072C061B3D0038466A /* SwiftTestTests.swift */; };
 		D6CBD1122C061B3D0038466A /* SwiftTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD1112C061B3D0038466A /* SwiftTestUITests.swift */; };
 		D6CBD1142C061B3D0038466A /* SwiftTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD1132C061B3D0038466A /* SwiftTestUITestsLaunchTests.swift */; };
-		D6CBD1242C061C520038466A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD1232C061C520038466A /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedmeterStyle.swift; sourceTree = "<group>"; };
-		D606519B2C073E370009F4E5 /* SpeedmeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedmeterView.swift; sourceTree = "<group>"; };
+		D606519B2C073E370009F4E5 /* SpeedmeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpeedmeterView.swift; path = ../../SpeedmeterView.swift; sourceTree = "<group>"; };
 		D606519D2C073FFD0009F4E5 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		D6CBD0F32C061B3C0038466A /* SwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CBD0F62C061B3C0038466A /* SwiftTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestApp.swift; sourceTree = "<group>"; };
@@ -51,7 +50,6 @@
 		D6CBD10D2C061B3D0038466A /* SwiftTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CBD1112C061B3D0038466A /* SwiftTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestUITests.swift; sourceTree = "<group>"; };
 		D6CBD1132C061B3D0038466A /* SwiftTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D6CBD1232C061C520038466A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,14 +100,11 @@
 		D6CBD0F52C061B3C0038466A /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
+				D6ED95E22C10604100210BCF /* Components */,
 				D6CBD0F62C061B3C0038466A /* SwiftTestApp.swift */,
 				D6CBD0F82C061B3C0038466A /* ContentView.swift */,
-				D6CBD1202C061BDC0038466A /* Models */,
 				D6CBD0FA2C061B3D0038466A /* Assets.xcassets */,
 				D6CBD0FC2C061B3D0038466A /* Preview Content */,
-				D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */,
-				D606519B2C073E370009F4E5 /* SpeedmeterView.swift */,
-				D606519D2C073FFD0009F4E5 /* Triangle.swift */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -139,12 +134,30 @@
 			path = SwiftTestUITests;
 			sourceTree = "<group>";
 		};
-		D6CBD1202C061BDC0038466A /* Models */ = {
+		D6ED95E22C10604100210BCF /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				D6CBD1232C061C520038466A /* Theme.swift */,
+				D6ED95E62C10638A00210BCF /* InitialSetting */,
+				D6ED95E32C10605800210BCF /* SpeedMeter */,
 			);
-			path = Models;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D6ED95E32C10605800210BCF /* SpeedMeter */ = {
+			isa = PBXGroup;
+			children = (
+				D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */,
+				D606519B2C073E370009F4E5 /* SpeedmeterView.swift */,
+				D606519D2C073FFD0009F4E5 /* Triangle.swift */,
+			);
+			path = SpeedMeter;
+			sourceTree = "<group>";
+		};
+		D6ED95E62C10638A00210BCF /* InitialSetting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InitialSetting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,7 +292,6 @@
 			files = (
 				D606519C2C073E370009F4E5 /* SpeedmeterView.swift in Sources */,
 				D6CBD0F92C061B3C0038466A /* ContentView.swift in Sources */,
-				D6CBD1242C061C520038466A /* Theme.swift in Sources */,
 				D606519E2C073FFD0009F4E5 /* Triangle.swift in Sources */,
 				D6CBD0F72C061B3C0038466A /* SwiftTestApp.swift in Sources */,
 				D606519A2C073E1A0009F4E5 /* SpeedmeterStyle.swift in Sources */,

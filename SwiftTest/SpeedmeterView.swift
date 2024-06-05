@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 struct SpeedmeterView: View {
  
-    @State var currentSpeed = 120.0
-    @State var recommendSpeed = 120.0
+    @Binding var currentSpeed: Double;
+    @Binding var recommendSpeed: Double;
     
     var body: some View {
         
