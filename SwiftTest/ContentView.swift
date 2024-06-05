@@ -25,8 +25,9 @@ struct ContentView: View {
             if (selected){
                 VStack {
                     SpeedmeterView(
-                        currentSpeed:  $currentSpeed,
-                        recommendSpeed: $recommendSpeed).previewDisplayName("SpeedmeterView")
+                        currentSpeed: $currentSpeed,
+                        recommendSpeed: $recommendSpeed
+                    ).previewDisplayName("SpeedmeterView")
                 }
             } else{
                 
