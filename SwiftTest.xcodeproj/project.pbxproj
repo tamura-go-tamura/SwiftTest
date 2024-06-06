@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedmeterStyle.swift; sourceTree = "<group>"; };
-		D606519B2C073E370009F4E5 /* SpeedmeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpeedmeterView.swift; path = ../../SpeedmeterView.swift; sourceTree = "<group>"; };
+		D606519B2C073E370009F4E5 /* SpeedmeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedmeterView.swift; sourceTree = "<group>"; };
 		D606519D2C073FFD0009F4E5 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		D6CBD0F32C061B3C0038466A /* SwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CBD0F62C061B3C0038466A /* SwiftTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestApp.swift; sourceTree = "<group>"; };
@@ -137,27 +137,35 @@
 		D6ED95E22C10604100210BCF /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				D6ED95E62C10638A00210BCF /* InitialSetting */,
-				D6ED95E32C10605800210BCF /* SpeedMeter */,
+				D6ED95E92C11F8E800210BCF /* Resources */,
+				D6ED95E82C11F8D800210BCF /* Models */,
+				D6ED95E72C11F8CC00210BCF /* Views */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		D6ED95E32C10605800210BCF /* SpeedMeter */ = {
+		D6ED95E72C11F8CC00210BCF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D606519B2C073E370009F4E5 /* SpeedmeterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D6ED95E82C11F8D800210BCF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D6ED95E92C11F8E800210BCF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */,
-				D606519B2C073E370009F4E5 /* SpeedmeterView.swift */,
 				D606519D2C073FFD0009F4E5 /* Triangle.swift */,
 			);
-			path = SpeedMeter;
-			sourceTree = "<group>";
-		};
-		D6ED95E62C10638A00210BCF /* InitialSetting */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = InitialSetting;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
