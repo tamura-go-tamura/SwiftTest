@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @StateObject private var viewModel = SpeedViewModel()
     @State private var selected = true; // 目的地などを設定したかどうか
     @State private var distance = 0;
-    @State var currentSpeed = 120.0;
-    @State var recommendSpeed = 10.0;
+    @State var recommendSpeed = 13.0;
     
     var body: some View {
         ZStack {
@@ -25,7 +24,7 @@ struct ContentView: View {
             if (selected){
                 VStack {
                     SpeedmeterView(
-                        currentSpeed: $currentSpeed,
+                        currentSpeed: $viewModel.speed,
                         recommendSpeed: $recommendSpeed
                     ).previewDisplayName("SpeedmeterView")
                 }

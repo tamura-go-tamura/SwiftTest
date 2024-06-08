@@ -10,6 +10,8 @@
 		D606519A2C073E1A0009F4E5 /* SpeedmeterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */; };
 		D606519C2C073E370009F4E5 /* SpeedmeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606519B2C073E370009F4E5 /* SpeedmeterView.swift */; };
 		D606519E2C073FFD0009F4E5 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606519D2C073FFD0009F4E5 /* Triangle.swift */; };
+		D6B525AA2C106BF1004943DC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B525A92C106BF1004943DC /* LocationManager.swift */; };
+		D6B525AC2C106C33004943DC /* SpeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B525AB2C106C33004943DC /* SpeedViewModel.swift */; };
 		D6CBD0F72C061B3C0038466A /* SwiftTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD0F62C061B3C0038466A /* SwiftTestApp.swift */; };
 		D6CBD0F92C061B3C0038466A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD0F82C061B3C0038466A /* ContentView.swift */; };
 		D6CBD0FB2C061B3D0038466A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6CBD0FA2C061B3D0038466A /* Assets.xcassets */; };
@@ -40,6 +42,9 @@
 		D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedmeterStyle.swift; sourceTree = "<group>"; };
 		D606519B2C073E370009F4E5 /* SpeedmeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpeedmeterView.swift; path = ../../SpeedmeterView.swift; sourceTree = "<group>"; };
 		D606519D2C073FFD0009F4E5 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		D6B525A92C106BF1004943DC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D6B525AB2C106C33004943DC /* SpeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewModel.swift; sourceTree = "<group>"; };
+		D6B525AD2C11C530004943DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D6CBD0F32C061B3C0038466A /* SwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CBD0F62C061B3C0038466A /* SwiftTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestApp.swift; sourceTree = "<group>"; };
 		D6CBD0F82C061B3C0038466A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +105,7 @@
 		D6CBD0F52C061B3C0038466A /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
+				D6B525AD2C11C530004943DC /* Info.plist */,
 				D6ED95E22C10604100210BCF /* Components */,
 				D6CBD0F62C061B3C0038466A /* SwiftTestApp.swift */,
 				D6CBD0F82C061B3C0038466A /* ContentView.swift */,
@@ -149,6 +155,8 @@
 				D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */,
 				D606519B2C073E370009F4E5 /* SpeedmeterView.swift */,
 				D606519D2C073FFD0009F4E5 /* Triangle.swift */,
+				D6B525A92C106BF1004943DC /* LocationManager.swift */,
+				D6B525AB2C106C33004943DC /* SpeedViewModel.swift */,
 			);
 			path = SpeedMeter;
 			sourceTree = "<group>";
@@ -290,8 +298,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6B525AC2C106C33004943DC /* SpeedViewModel.swift in Sources */,
 				D606519C2C073E370009F4E5 /* SpeedmeterView.swift in Sources */,
 				D6CBD0F92C061B3C0038466A /* ContentView.swift in Sources */,
+				D6B525AA2C106BF1004943DC /* LocationManager.swift in Sources */,
 				D606519E2C073FFD0009F4E5 /* Triangle.swift in Sources */,
 				D6CBD0F72C061B3C0038466A /* SwiftTestApp.swift in Sources */,
 				D606519A2C073E1A0009F4E5 /* SpeedmeterStyle.swift in Sources */,
@@ -383,6 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "速度の算出に用います。";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -440,6 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "速度の算出に用います。";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -458,9 +470,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftTest/Preview Content\"";
-				DEVELOPMENT_TEAM = X84RPN4984;
+				DEVELOPMENT_TEAM = D8T9YAZ2K4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -487,9 +500,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftTest/Preview Content\"";
-				DEVELOPMENT_TEAM = X84RPN4984;
+				DEVELOPMENT_TEAM = D8T9YAZ2K4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
