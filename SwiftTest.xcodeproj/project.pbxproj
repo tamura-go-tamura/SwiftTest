@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D606519A2C073E1A0009F4E5 /* SpeedmeterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */; };
-		D606519C2C073E370009F4E5 /* SpeedmeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606519B2C073E370009F4E5 /* SpeedmeterView.swift */; };
+		D606519C2C073E370009F4E5 /* SpeedMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606519B2C073E370009F4E5 /* SpeedMeterView.swift */; };
 		D606519E2C073FFD0009F4E5 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606519D2C073FFD0009F4E5 /* Triangle.swift */; };
 		D6CBD0F72C061B3C0038466A /* SwiftTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD0F62C061B3C0038466A /* SwiftTestApp.swift */; };
 		D6CBD0F92C061B3C0038466A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD0F82C061B3C0038466A /* ContentView.swift */; };
@@ -17,6 +17,14 @@
 		D6CBD1082C061B3D0038466A /* SwiftTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD1072C061B3D0038466A /* SwiftTestTests.swift */; };
 		D6CBD1122C061B3D0038466A /* SwiftTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD1112C061B3D0038466A /* SwiftTestUITests.swift */; };
 		D6CBD1142C061B3D0038466A /* SwiftTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD1132C061B3D0038466A /* SwiftTestUITestsLaunchTests.swift */; };
+		D6ED95ED2C13414D00210BCF /* MapSelectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED95EC2C13414D00210BCF /* MapSelectingView.swift */; };
+		D6ED95EF2C134A2A00210BCF /* MapViewWithCross.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED95EE2C134A2A00210BCF /* MapViewWithCross.swift */; };
+		D6ED95F52C14B4DC00210BCF /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED95F42C14B4DC00210BCF /* ConfigurationView.swift */; };
+		D6ED95F92C1533FC00210BCF /* DateTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED95F82C1533FC00210BCF /* DateTimer.swift */; };
+		D6ED95FC2C15446000210BCF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED95FB2C15446000210BCF /* LocationManager.swift */; };
+		D6ED95FE2C1544A400210BCF /* SpeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED95FD2C1544A400210BCF /* SpeedViewModel.swift */; };
+		D6ED96032C1548FA00210BCF /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED96022C1548FA00210BCF /* MapViewModel.swift */; };
+		D6ED96072C15576600210BCF /* RouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED96062C15576600210BCF /* RouteViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +46,7 @@
 
 /* Begin PBXFileReference section */
 		D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedmeterStyle.swift; sourceTree = "<group>"; };
-		D606519B2C073E370009F4E5 /* SpeedmeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedmeterView.swift; sourceTree = "<group>"; };
+		D606519B2C073E370009F4E5 /* SpeedMeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedMeterView.swift; sourceTree = "<group>"; };
 		D606519D2C073FFD0009F4E5 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		D6CBD0F32C061B3C0038466A /* SwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CBD0F62C061B3C0038466A /* SwiftTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestApp.swift; sourceTree = "<group>"; };
@@ -50,6 +58,14 @@
 		D6CBD10D2C061B3D0038466A /* SwiftTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CBD1112C061B3D0038466A /* SwiftTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestUITests.swift; sourceTree = "<group>"; };
 		D6CBD1132C061B3D0038466A /* SwiftTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D6ED95EC2C13414D00210BCF /* MapSelectingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectingView.swift; sourceTree = "<group>"; };
+		D6ED95EE2C134A2A00210BCF /* MapViewWithCross.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewWithCross.swift; sourceTree = "<group>"; };
+		D6ED95F42C14B4DC00210BCF /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
+		D6ED95F82C1533FC00210BCF /* DateTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimer.swift; sourceTree = "<group>"; };
+		D6ED95FB2C15446000210BCF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D6ED95FD2C1544A400210BCF /* SpeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewModel.swift; sourceTree = "<group>"; };
+		D6ED96022C1548FA00210BCF /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		D6ED96062C15576600210BCF /* RouteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +163,8 @@
 		D6ED95E72C11F8CC00210BCF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D606519B2C073E370009F4E5 /* SpeedmeterView.swift */,
+				D6ED96002C15452900210BCF /* SpeedMeterViews */,
+				D6ED95FF2C15451700210BCF /* SettingViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,8 +172,9 @@
 		D6ED95E82C11F8D800210BCF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D606519D2C073FFD0009F4E5 /* Triangle.swift */,
-				D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */,
+				D6ED96012C1548E700210BCF /* Setting */,
+				D6ED95FA2C15444100210BCF /* SpeedMeter */,
+				D6ED96062C15576600210BCF /* RouteViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +184,44 @@
 			children = (
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D6ED95FA2C15444100210BCF /* SpeedMeter */ = {
+			isa = PBXGroup;
+			children = (
+				D606519D2C073FFD0009F4E5 /* Triangle.swift */,
+				D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */,
+				D6ED95FB2C15446000210BCF /* LocationManager.swift */,
+				D6ED95FD2C1544A400210BCF /* SpeedViewModel.swift */,
+			);
+			path = SpeedMeter;
+			sourceTree = "<group>";
+		};
+		D6ED95FF2C15451700210BCF /* SettingViews */ = {
+			isa = PBXGroup;
+			children = (
+				D6ED95EC2C13414D00210BCF /* MapSelectingView.swift */,
+				D6ED95EE2C134A2A00210BCF /* MapViewWithCross.swift */,
+				D6ED95F42C14B4DC00210BCF /* ConfigurationView.swift */,
+			);
+			path = SettingViews;
+			sourceTree = "<group>";
+		};
+		D6ED96002C15452900210BCF /* SpeedMeterViews */ = {
+			isa = PBXGroup;
+			children = (
+				D606519B2C073E370009F4E5 /* SpeedMeterView.swift */,
+			);
+			path = SpeedMeterViews;
+			sourceTree = "<group>";
+		};
+		D6ED96012C1548E700210BCF /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				D6ED96022C1548FA00210BCF /* MapViewModel.swift */,
+				D6ED95F82C1533FC00210BCF /* DateTimer.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,11 +354,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D606519C2C073E370009F4E5 /* SpeedmeterView.swift in Sources */,
+				D6ED95FE2C1544A400210BCF /* SpeedViewModel.swift in Sources */,
+				D606519C2C073E370009F4E5 /* SpeedMeterView.swift in Sources */,
+				D6ED95F52C14B4DC00210BCF /* ConfigurationView.swift in Sources */,
 				D6CBD0F92C061B3C0038466A /* ContentView.swift in Sources */,
+				D6ED95ED2C13414D00210BCF /* MapSelectingView.swift in Sources */,
 				D606519E2C073FFD0009F4E5 /* Triangle.swift in Sources */,
+				D6ED95F92C1533FC00210BCF /* DateTimer.swift in Sources */,
 				D6CBD0F72C061B3C0038466A /* SwiftTestApp.swift in Sources */,
+				D6ED95FC2C15446000210BCF /* LocationManager.swift in Sources */,
+				D6ED95EF2C134A2A00210BCF /* MapViewWithCross.swift in Sources */,
 				D606519A2C073E1A0009F4E5 /* SpeedmeterStyle.swift in Sources */,
+				D6ED96072C15576600210BCF /* RouteViewModel.swift in Sources */,
+				D6ED96032C1548FA00210BCF /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +533,8 @@
 				DEVELOPMENT_TEAM = X84RPN4984;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "このアプリでは位置情報を利用して、あなたの現在地を表示します。";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "このアプリでは位置情報を利用して、あなたの現在地を表示します。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -498,6 +564,8 @@
 				DEVELOPMENT_TEAM = X84RPN4984;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "このアプリでは位置情報を利用して、あなたの現在地を表示します。";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "このアプリでは位置情報を利用して、あなたの現在地を表示します。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
