@@ -15,20 +15,21 @@ struct SpeedmeterView: View {
     var body: some View {
         
         ZStack {
-            Gauge(value: currentSpeed, in: 0...25) {
+            Gauge(value: currentSpeed, in: 0...30) {
                 Image(systemName: "gauge.medium")
                     .font(.system(size: 50.0))
             } currentValueLabel: {
-                Text("\(Int(currentSpeed))")
+                let roundSpeed = round(currentSpeed * 10) / 10;
+                Text(String(format: "%.1f", roundSpeed))
                 
             }
-            .gaugeStyle(SpeedometerGaugeStyle(recommendSpeed: recommendSpeed / 25.0))
+            .gaugeStyle(SpeedometerGaugeStyle(recommendSpeed: recommendSpeed / 30.0))
             Triangle()
                .fill(Color.red)
                .rotationEffect(.degrees(180))
                .frame(width: 25, height: 35)
                .offset(x:5, y: -185) // Adjust based on your gauge size
-               .rotationEffect(.degrees(-137.0 + (270.0 * recommendSpeed / 25)))
+               .rotationEffect(.degrees(-137.0 + (270.0 * recommendSpeed / 30)))
             
         }
     }

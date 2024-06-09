@@ -11,14 +11,17 @@ import CoreLocation
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
     @Published var speed: Double = 0.0
+    @Published var distance: Double = 0.0
     @Published var latitude: Double = 0.0
     @Published var longitude: Double = 0.0
+    private var lastLocation: CLLocation?
 
     override init() {
         super.init()
         print("location init")
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
     }
     
@@ -42,6 +45,11 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         //print(location.speed)
         speed = location.speed > 0 ? location.speed * 3.6 : 0.0 // m/s to km/h
+        if let lastLocation = lastLocation {
+            let distanceDelta = location.distance(from: lastLocation)
+            distance += distanceDelta
+        }
+        lastLocation = location
         latitude = location.coordinate.latitude
         longitude = location.coordinate.longitude
     }
