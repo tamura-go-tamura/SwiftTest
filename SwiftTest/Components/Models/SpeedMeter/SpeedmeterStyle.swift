@@ -34,7 +34,7 @@ struct SpeedometerGaugeStyle: GaugeStyle {
  
             Circle()
                 .trim(from: 0, to: 0.75)
-                .stroke(Color.black, style: StrokeStyle(lineWidth: 10, lineCap: .butt, lineJoin: .round, dash: [1, 34], dashPhase: 0.0))
+                .stroke(Color.gray, style: StrokeStyle(lineWidth: 10, lineCap: .butt, lineJoin: .round, dash: [1, 22.5], dashPhase: 0.0))
                 .rotationEffect(.degrees(135))
             
             Triangle()

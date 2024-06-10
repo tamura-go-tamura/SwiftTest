@@ -46,10 +46,10 @@ struct ContentView: View {
                     //                            Text(String(viewModel.latitude))
                     //                            Text(String(viewModel.longitude))
 //                    Text(String(remainingTimeInHour))
-                    Text(String(speedViewModel.latitude))
+                    Text(String(speedViewModel.distance))
                     SpeedmeterView(
                         currentSpeed: $speedViewModel.speed,
-                        recommendSpeed: $recommendSpeed
+                        recommendSpeed: (3.0-speedViewModel.distance/1000.0)/remainingTimeInHour
                     ).previewDisplayName("SpeedmeterView")
                 }
                 
