@@ -48,6 +48,7 @@
 		D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedmeterStyle.swift; sourceTree = "<group>"; };
 		D606519B2C073E370009F4E5 /* SpeedMeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedMeterView.swift; sourceTree = "<group>"; };
 		D606519D2C073FFD0009F4E5 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		D6B525AE2C184F39004943DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D6CBD0F32C061B3C0038466A /* SwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CBD0F62C061B3C0038466A /* SwiftTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestApp.swift; sourceTree = "<group>"; };
 		D6CBD0F82C061B3C0038466A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 		D6CBD0F52C061B3C0038466A /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
+				D6B525AE2C184F39004943DC /* Info.plist */,
 				D6ED95E22C10604100210BCF /* Components */,
 				D6CBD0F62C061B3C0038466A /* SwiftTestApp.swift */,
 				D6CBD0F82C061B3C0038466A /* ContentView.swift */,
@@ -530,14 +532,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftTest/Preview Content\"";
-				DEVELOPMENT_TEAM = X84RPN4984;
+				DEVELOPMENT_TEAM = D8T9YAZ2K4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftTest/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "このアプリでは位置情報を利用して、あなたの現在地を表示します。";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "このアプリでは位置情報を利用して、あなたの現在地を表示します。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -561,14 +563,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftTest/Preview Content\"";
-				DEVELOPMENT_TEAM = X84RPN4984;
+				DEVELOPMENT_TEAM = D8T9YAZ2K4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftTest/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "このアプリでは位置情報を利用して、あなたの現在地を表示します。";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "このアプリでは位置情報を利用して、あなたの現在地を表示します。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
