@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreLocation
 
-struct SuoerTabView: View {
+struct SuperTabView: View {
     
     @State var selectionDate = Date()
     @StateObject var nowDateTimer = DateTimer()
@@ -29,26 +29,31 @@ struct SuoerTabView: View {
     
     
     var body: some View {
-        Image("background")
-            .resizable()
-            .scaledToFill()
-            .edgesIgnoringSafeArea(.all)
         
         TabView{
+            
+            Text("ここに現在の進度が表示")     // Viewファイル②
+                .tabItem {
+                    Image(systemName: "figure.walk.circle.fill")
+                    Text("Map")
+                }
+            
             
             SpeedmeterView(
                 currentSpeed: $speedViewModel.speed,
                 recommendSpeed: (3.0-speedViewModel.distance/1000.0)/remainingTimeInHour
             ).previewDisplayName("SpeedmeterView")   // Viewファイル①
                 .tabItem {
-                    Image(systemName: "message.fill")
-                    Text("メッセージ")
+                    Image(systemName: "stopwatch.fill")
+                    Text("Meter")
                 }
             
             ConfigurationView(selectionDate: $selectionDate, viewModel: mapViewModel)    // Viewファイル②
                 .tabItem {
-                    Label("Page2", systemImage: "2.circle")
+                    Image(systemName: "pencil.circle.fill")
+                    Text("Setting")
                 }
+            
         }
 
         
@@ -56,5 +61,5 @@ struct SuoerTabView: View {
 }
 
 #Preview {
-    TabView()
+    SuperTabView()
 }
