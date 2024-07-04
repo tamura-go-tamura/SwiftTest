@@ -27,7 +27,6 @@
 		D6ED96072C15576600210BCF /* RouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED96062C15576600210BCF /* RouteViewModel.swift */; };
 		D6F4466C2C1EF6B300A7B06E /* SwiftyGif in Frameworks */ = {isa = PBXBuildFile; productRef = D6F4466B2C1EF6B300A7B06E /* SwiftyGif */; };
 		D6F446712C1EFC9D00A7B06E /* GifUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F446702C1EFC9D00A7B06E /* GifUIView.swift */; };
-		D6F446772C1F068100A7B06E /* runner.gif in Resources */ = {isa = PBXBuildFile; fileRef = D6F446762C1F068100A7B06E /* runner.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +70,6 @@
 		D6ED96022C1548FA00210BCF /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		D6ED96062C15576600210BCF /* RouteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewModel.swift; sourceTree = "<group>"; };
 		D6F446702C1EFC9D00A7B06E /* GifUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifUIView.swift; sourceTree = "<group>"; };
-		D6F446762C1F068100A7B06E /* runner.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = runner.gif; path = ../../../../../../../Downloads/runner.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,7 +242,6 @@
 		D6F4466F2C1EFC7D00A7B06E /* OptionView */ = {
 			isa = PBXGroup;
 			children = (
-				D6F446762C1F068100A7B06E /* runner.gif */,
 				D6F446702C1EFC9D00A7B06E /* GifUIView.swift */,
 			);
 			path = OptionView;
@@ -360,7 +357,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6F446772C1F068100A7B06E /* runner.gif in Resources */,
 				D6CBD0FE2C061B3D0038466A /* Preview Assets.xcassets in Resources */,
 				D6CBD0FB2C061B3D0038466A /* Assets.xcassets in Resources */,
 			);

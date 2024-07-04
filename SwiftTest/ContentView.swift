@@ -77,10 +77,6 @@ struct ContentView: View {
                         currentSpeed: $speedViewModel.speed,
                         recommendSpeed: (distance.magnitude/1000.0)/remainingTimeInHour
                     ).previewDisplayName("SpeedmeterView")
-                    GifUIView(gifName: "runner.gif") 
-                        .scaleEffect(0.2)
-                        .padding(.top, 250)
-                        .frame(width: 50, height: 50)
                 }
                 
                 List{
