@@ -7,12 +7,14 @@
 
 import Foundation
 import Combine
+import CoreLocation
 
 class SpeedViewModel: ObservableObject {
     @Published var speed: Double = 0.0
     @Published var distance: Double = 0.0
-    @Published var latitude: Double = 0.0
-    @Published var longiude: Double = 0.0
+//    @Published var latitude: Double = 0.0
+//    @Published var longiude: Double = 0.0
+    @Published var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
     private var cancellables = Set<AnyCancellable>()
     private var locationManager = LocationManager()
 
@@ -23,11 +25,14 @@ class SpeedViewModel: ObservableObject {
         locationManager.$distance
             .assign(to: \.distance, on: self)
             .store(in: &cancellables)
-        locationManager.$latitude
-            .assign(to: \.latitude, on: self)
+        locationManager.$coordinate
+            .assign(to: \.coordinate, on: self)
             .store(in: &cancellables)
-        locationManager.$longitude
-            .assign(to: \.longiude, on: self)
-            .store(in: &cancellables)
+//        locationManager.$latitude
+//            .assign(to: \.latitude, on: self)
+//            .store(in: &cancellables)
+//        locationManager.$longitude
+//            .assign(to: \.longiude, on: self)
+//            .store(in: &cancellables)
     }
 }

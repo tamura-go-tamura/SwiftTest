@@ -7,16 +7,16 @@
 //
 import SwiftUI
 import CoreLocation
+import MapKit
+import SwiftyGif
 
 struct SuperTabView: View {
     
     @State var selectionDate = Date()
     @StateObject var nowDateTimer = DateTimer()
     @StateObject var mapViewModel: MapViewModel = MapViewModel() //目的地点の経度緯度情報
-    @StateObject private var speedViewModel: SpeedViewModel = SpeedViewModel() //現在地点の経度緯度情報
-        
-    @State var recommendSpeed = 10.0; //まだ
-    var distance: Double = 0.0; // まだ
+    @StateObject private var speedViewModel: SpeedViewModel = SpeedViewModel()
+    @State var distance = CLLocationDistance(floatLiteral: 0.0)
     
     var remainingTimeInHour: Double {
         //残り時間をhour単位で取得
@@ -24,6 +24,41 @@ struct SuperTabView: View {
         get {
             let dateSubtraction: Double = Double(selectionDate.timeIntervalSince(nowDateTimer.nowDate)) / 3600.0
             return dateSubtraction;
+        }
+    }
+    
+    func calculateDistance(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D) {
+            print("update distance")
+            let sourcePlacemark = MKPlacemark(coordinate: source)
+            let destinationPlacemark = MKPlacemark(coordinate: destination)
+
+            let directionRequest = MKDirections.Request()
+            directionRequest.source = MKMapItem(placemark: sourcePlacemark)
+            directionRequest.destination = MKMapItem(placemark: destinationPlacemark)
+            directionRequest.transportType = .automobile
+
+            let directions = MKDirections(request: directionRequest)
+            directions.calculate { [self] response, error in
+                
+                if let error = error as NSError? {
+                    print("Error calculating directions: \(String(describing: error))")
+                    return
+                }
+
+                guard let response = response, let route = response.routes.first else {
+                    print("No valid route found")
+                    return
+                }
+
+                DispatchQueue.main.async {
+                    self.distance = route.distance
+                }
+            }
+        }
+    
+    private func startTimer() {
+        Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { _ in
+            self.calculateDistance(from: speedViewModel.coordinate, to: mapViewModel.coordinate)
         }
     }
     
@@ -41,8 +76,8 @@ struct SuperTabView: View {
             
             SpeedmeterView(
                 currentSpeed: $speedViewModel.speed,
-                recommendSpeed: (3.0-speedViewModel.distance/1000.0)/remainingTimeInHour
-            ).previewDisplayName("SpeedmeterView")   // Viewファイル①
+                recommendSpeed: (distance.magnitude/1000.0)/remainingTimeInHour
+            ).previewDisplayName("SpeedmeterView").previewDisplayName("SpeedmeterView")   // Viewファイル①
                 .tabItem {
                     Image(systemName: "stopwatch.fill")
                     Text("Meter")

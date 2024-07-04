@@ -26,6 +26,8 @@
 		D6ED95FE2C1544A400210BCF /* SpeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED95FD2C1544A400210BCF /* SpeedViewModel.swift */; };
 		D6ED96032C1548FA00210BCF /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED96022C1548FA00210BCF /* MapViewModel.swift */; };
 		D6ED96072C15576600210BCF /* RouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED96062C15576600210BCF /* RouteViewModel.swift */; };
+		D6F4466C2C1EF6B300A7B06E /* SwiftyGif in Frameworks */ = {isa = PBXBuildFile; productRef = D6F4466B2C1EF6B300A7B06E /* SwiftyGif */; };
+		D6F446712C1EFC9D00A7B06E /* GifUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F446702C1EFC9D00A7B06E /* GifUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,7 @@
 		D6ED95FD2C1544A400210BCF /* SpeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewModel.swift; sourceTree = "<group>"; };
 		D6ED96022C1548FA00210BCF /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		D6ED96062C15576600210BCF /* RouteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewModel.swift; sourceTree = "<group>"; };
+		D6F446702C1EFC9D00A7B06E /* GifUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6F4466C2C1EF6B300A7B06E /* SwiftyGif in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +100,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B118CD55C5229F925EB8F226 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D6CBD0EA2C061B3C0038466A = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +114,7 @@
 				D6CBD1062C061B3D0038466A /* SwiftTestTests */,
 				D6CBD1102C061B3D0038466A /* SwiftTestUITests */,
 				D6CBD0F42C061B3C0038466A /* Products */,
+				B118CD55C5229F925EB8F226 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +180,7 @@
 		D6ED95E72C11F8CC00210BCF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D6F4466F2C1EFC7D00A7B06E /* OptionView */,
 				D6ED96002C15452900210BCF /* SpeedMeterViews */,
 				D6ED95FF2C15451700210BCF /* SettingViews */,
 			);
@@ -229,6 +242,14 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		D6F4466F2C1EFC7D00A7B06E /* OptionView */ = {
+			isa = PBXGroup;
+			children = (
+				D6F446702C1EFC9D00A7B06E /* GifUIView.swift */,
+			);
+			path = OptionView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,6 +266,9 @@
 			dependencies = (
 			);
 			name = SwiftTest;
+			packageProductDependencies = (
+				D6F4466B2C1EF6B300A7B06E /* SwiftyGif */,
+			);
 			productName = SwiftTest;
 			productReference = D6CBD0F32C061B3C0038466A /* SwiftTest.app */;
 			productType = "com.apple.product-type.application";
@@ -317,6 +341,9 @@
 				Base,
 			);
 			mainGroup = D6CBD0EA2C061B3C0038466A;
+			packageReferences = (
+				D6F4466A2C1EF6B300A7B06E /* XCRemoteSwiftPackageReference "SwiftyGif" */,
+			);
 			productRefGroup = D6CBD0F42C061B3C0038466A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -362,6 +389,7 @@
 				D6ED95FE2C1544A400210BCF /* SpeedViewModel.swift in Sources */,
 				D606519C2C073E370009F4E5 /* SpeedMeterView.swift in Sources */,
 				D6ED95F52C14B4DC00210BCF /* ConfigurationView.swift in Sources */,
+				D6F446712C1EFC9D00A7B06E /* GifUIView.swift in Sources */,
 				D6CBD0F92C061B3C0038466A /* ContentView.swift in Sources */,
 				D6DCBB892C358A7F00231CAB /* SuperTabView.swift in Sources */,
 				D6ED95ED2C13414D00210BCF /* MapSelectingView.swift in Sources */,
@@ -531,26 +559,31 @@
 		D6CBD1182C061B3D0038466A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftTest/Preview Content\"";
 				DEVELOPMENT_TEAM = D8T9YAZ2K4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftTest/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Movon;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "このアプリでは位置情報を利用して、あなたの現在地を表示します。";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "このアプリでは位置情報を利用して、あなたの現在地を表示します。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SwiftTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -562,21 +595,25 @@
 		D6CBD1192C061B3D0038466A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftTest/Preview Content\"";
 				DEVELOPMENT_TEAM = D8T9YAZ2K4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftTest/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Movon;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "このアプリでは位置情報を利用して、あなたの現在地を表示します。";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "このアプリでは位置情報を利用して、あなたの現在地を表示します。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -597,10 +634,12 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = X84RPN4984;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SwiftTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -617,6 +656,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = X84RPN4984;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
@@ -636,9 +676,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = X84RPN4984;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SwiftTestUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -654,6 +696,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = X84RPN4984;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -706,6 +749,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D6F4466A2C1EF6B300A7B06E /* XCRemoteSwiftPackageReference "SwiftyGif" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kirualex/SwiftyGif.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D6F4466B2C1EF6B300A7B06E /* SwiftyGif */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6F4466A2C1EF6B300A7B06E /* XCRemoteSwiftPackageReference "SwiftyGif" */;
+			productName = SwiftyGif;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D6CBD0EB2C061B3C0038466A /* Project object */;
 }
