@@ -17,6 +17,7 @@
 		D6CBD1082C061B3D0038466A /* SwiftTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD1072C061B3D0038466A /* SwiftTestTests.swift */; };
 		D6CBD1122C061B3D0038466A /* SwiftTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD1112C061B3D0038466A /* SwiftTestUITests.swift */; };
 		D6CBD1142C061B3D0038466A /* SwiftTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD1132C061B3D0038466A /* SwiftTestUITestsLaunchTests.swift */; };
+		D6DCBB892C358A7F00231CAB /* SuperTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DCBB882C358A7F00231CAB /* SuperTabView.swift */; };
 		D6ED95ED2C13414D00210BCF /* MapSelectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED95EC2C13414D00210BCF /* MapSelectingView.swift */; };
 		D6ED95EF2C134A2A00210BCF /* MapViewWithCross.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED95EE2C134A2A00210BCF /* MapViewWithCross.swift */; };
 		D6ED95F52C14B4DC00210BCF /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED95F42C14B4DC00210BCF /* ConfigurationView.swift */; };
@@ -61,6 +62,7 @@
 		D6CBD10D2C061B3D0038466A /* SwiftTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CBD1112C061B3D0038466A /* SwiftTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestUITests.swift; sourceTree = "<group>"; };
 		D6CBD1132C061B3D0038466A /* SwiftTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D6DCBB882C358A7F00231CAB /* SuperTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperTabView.swift; sourceTree = "<group>"; };
 		D6ED95EC2C13414D00210BCF /* MapSelectingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectingView.swift; sourceTree = "<group>"; };
 		D6ED95EE2C134A2A00210BCF /* MapViewWithCross.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewWithCross.swift; sourceTree = "<group>"; };
 		D6ED95F42C14B4DC00210BCF /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				D6B525AE2C184F39004943DC /* Info.plist */,
 				D6ED95E22C10604100210BCF /* Components */,
 				D6CBD0F62C061B3C0038466A /* SwiftTestApp.swift */,
+				D6DCBB882C358A7F00231CAB /* SuperTabView.swift */,
 				D6CBD0F82C061B3C0038466A /* ContentView.swift */,
 				D6CBD0FA2C061B3D0038466A /* Assets.xcassets */,
 				D6CBD0FC2C061B3D0038466A /* Preview Content */,
@@ -388,6 +391,7 @@
 				D6ED95F52C14B4DC00210BCF /* ConfigurationView.swift in Sources */,
 				D6F446712C1EFC9D00A7B06E /* GifUIView.swift in Sources */,
 				D6CBD0F92C061B3C0038466A /* ContentView.swift in Sources */,
+				D6DCBB892C358A7F00231CAB /* SuperTabView.swift in Sources */,
 				D6ED95ED2C13414D00210BCF /* MapSelectingView.swift in Sources */,
 				D606519E2C073FFD0009F4E5 /* Triangle.swift in Sources */,
 				D6ED95F92C1533FC00210BCF /* DateTimer.swift in Sources */,
