@@ -17,8 +17,7 @@ class MapViewModel : NSObject, ObservableObject, MKLocalSearchCompleterDelegate{
     /// 位置情報検索結果
     @Published var completions: [MKLocalSearchCompletion] = []
     /// 場所の詳細情報
-    @Published var longitude: Double = 0.0
-    @Published var latitude: Double = 0.0
+    @Published var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
     
     override init(){
         super.init()
@@ -79,8 +78,6 @@ class MapViewModel : NSObject, ObservableObject, MKLocalSearchCompleterDelegate{
     func onSearch(){
         // 検索結果クリア
         completions = []
-        longitude = 0.0
-        latitude = 0.0
         
         // 検索条件設定
         let request = MKLocalSearch.Request()
@@ -94,8 +91,7 @@ class MapViewModel : NSObject, ObservableObject, MKLocalSearchCompleterDelegate{
             }
             if let mapItem = response?.mapItems.first {
                 DispatchQueue.main.async {
-                    self.longitude = mapItem.placemark.coordinate.longitude
-                    self.latitude = mapItem.placemark.coordinate.latitude
+                    self.coordinate = mapItem.placemark.coordinate
                 }
             }
         }

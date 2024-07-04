@@ -7,16 +7,16 @@
 //
 import SwiftUI
 import CoreLocation
+import MapKit
+import SwiftyGif
 
 struct ContentView: View {
     
     @State var selectionDate = Date()
     @StateObject var nowDateTimer = DateTimer()
     @StateObject var mapViewModel: MapViewModel = MapViewModel() //目的地点の経度緯度情報
-    @StateObject private var speedViewModel: SpeedViewModel = SpeedViewModel() //現在地点の経度緯度情報
-        
-    @State var recommendSpeed = 10.0; //まだ
-    var distance: Double = 0.0; // まだ
+    @StateObject private var speedViewModel: SpeedViewModel = SpeedViewModel()
+    @State var distance = CLLocationDistance(floatLiteral: 0.0)
     
     var remainingTimeInHour: Double {
         //残り時間をhour単位で取得
@@ -27,11 +27,43 @@ struct ContentView: View {
         }
     }
     
+    func calculateDistance(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D) {
+            print("update distance")
+            let sourcePlacemark = MKPlacemark(coordinate: source)
+            let destinationPlacemark = MKPlacemark(coordinate: destination)
+
+            let directionRequest = MKDirections.Request()
+            directionRequest.source = MKMapItem(placemark: sourcePlacemark)
+            directionRequest.destination = MKMapItem(placemark: destinationPlacemark)
+            directionRequest.transportType = .automobile
+
+            let directions = MKDirections(request: directionRequest)
+            directions.calculate { [self] response, error in
+                
+                if let error = error as NSError? {
+                    print("Error calculating directions: \(String(describing: error))")
+                    return
+                }
+
+                guard let response = response, let route = response.routes.first else {
+                    print("No valid route found")
+                    return
+                }
+
+                DispatchQueue.main.async {
+                    self.distance = route.distance
+                }
+            }
+        }
+    
+    private func startTimer() {
+        Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { _ in
+            self.calculateDistance(from: speedViewModel.coordinate, to: mapViewModel.coordinate)
+        }
+    }
+    
     
     var body: some View {
-        
-        
-        
         NavigationStack {
             ZStack {
                 // Background Image
@@ -41,17 +73,14 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {
-                    
-                    //                            Text(String(viewModel.location))
-                    //                            Text(String(viewModel.latitude))
-                    //                            Text(String(viewModel.longitude))
-//                    Text(String(remainingTimeInHour))
-                    //Text(String(speedViewModel.distance))
-//                    Text(String(3.0-speedViewModel.distance/1000.0));
                     SpeedmeterView(
                         currentSpeed: $speedViewModel.speed,
-                        recommendSpeed: (3.0-speedViewModel.distance/1000.0)/remainingTimeInHour
+                        recommendSpeed: (distance.magnitude/1000.0)/remainingTimeInHour
                     ).previewDisplayName("SpeedmeterView")
+                    GifUIView(gifName: "runner.gif") 
+                        .scaleEffect(0.2)
+                        .padding(.top, 250)
+                        .frame(width: 50, height: 50)
                 }
                 
                 List{
@@ -74,10 +103,11 @@ struct ContentView: View {
         }
         .onAppear{
             nowDateTimer.startTimer()
-            }
-            
-        
-        
+            startTimer()
+        }
+        .onChange(of: mapViewModel.coordinate.latitude) {
+            self.calculateDistance(from: speedViewModel.coordinate, to: mapViewModel.coordinate)
+        }
     }
 }
 

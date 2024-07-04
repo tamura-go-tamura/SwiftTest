@@ -12,8 +12,9 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
     @Published var speed: Double = 0.0
     @Published var distance: Double = 0.0 //歩いた距離(m)
-    @Published var latitude: Double = 0.0
-    @Published var longitude: Double = 0.0
+//    @Published var latitude: Double = 0.0
+//    @Published var longitude: Double = 0.0
+    @Published var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
     private var lastLocation: CLLocation?
 
     override init() {
@@ -50,7 +51,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             distance += distanceDelta
         }
         lastLocation = location
-        latitude = location.coordinate.latitude
-        longitude = location.coordinate.longitude
+        coordinate = location.coordinate
     }
 }

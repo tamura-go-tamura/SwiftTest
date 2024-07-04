@@ -25,7 +25,7 @@ struct SpeedmeterView: View {
             }
             .gaugeStyle(SpeedometerGaugeStyle(recommendSpeed: recommendSpeed / 30.0))
             Triangle()
-               .fill(Color.red)
+                .fill(recommendSpeed <= 30 && recommendSpeed >= 0 ? Color.red :  Color.white.opacity(0))
                .rotationEffect(.degrees(180))
                .frame(width: 25, height: 35)
                .offset(x:5, y: -185) // Adjust based on your gauge size
