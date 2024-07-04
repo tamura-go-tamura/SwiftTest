@@ -67,7 +67,7 @@ struct SuperTabView: View {
         
         TabView{
             
-            Text("ここに現在の進度が表示")     // Viewファイル②
+            Text("ここに現在の進度が表示") // Viewファイル②
                 .tabItem {
                     Image(systemName: "figure.walk.circle.fill")
                     Text("Map")
@@ -89,6 +89,13 @@ struct SuperTabView: View {
                     Text("Setting")
                 }
             
+        }
+        .onAppear{
+            nowDateTimer.startTimer()
+            startTimer()
+        }
+        .onChange(of: mapViewModel.coordinate.latitude) {
+            self.calculateDistance(from: speedViewModel.coordinate, to: mapViewModel.coordinate)
         }
 
         
