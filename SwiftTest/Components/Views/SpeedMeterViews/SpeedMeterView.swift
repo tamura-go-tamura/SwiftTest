@@ -15,6 +15,10 @@ struct SpeedmeterView: View {
     var body: some View {
         
         ZStack {
+            Image("background")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
             Gauge(value: currentSpeed, in: 0...30) {
                 Image(systemName: "gauge.medium")
                     .font(.system(size: 50.0))

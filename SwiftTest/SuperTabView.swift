@@ -67,18 +67,18 @@ struct SuperTabView: View {
         
         TabView{
             
-            Text("ここに現在の進度が表示") // Viewファイル②
+            ProgressView(elapsedDistance: speedViewModel.distance / 1000, remainingDistance: distance/1000)
                 .tabItem {
-                    Image(systemName: "figure.walk.circle.fill")
-                    Text("Map")
-                }
-            
+               Image(systemName: "figure.walk.circle.fill")
+               Text("Map")
+           }
             
             SpeedmeterView(
                 currentSpeed: $speedViewModel.speed,
                 recommendSpeed: (distance.magnitude/1000.0)/remainingTimeInHour
             ).previewDisplayName("SpeedmeterView").previewDisplayName("SpeedmeterView")   // Viewファイル①
                 .tabItem {
+                    
                     Image(systemName: "stopwatch.fill")
                     Text("Meter")
                 }
@@ -91,6 +91,7 @@ struct SuperTabView: View {
             
         }
         .onAppear{
+            setupTabBarAppearance()
             nowDateTimer.startTimer()
             startTimer()
         }
@@ -99,6 +100,15 @@ struct SuperTabView: View {
         }
 
         
+    }
+    
+    func setupTabBarAppearance() {
+
+        let appearance = UITabBarAppearance()
+        appearance.configureWithDefaultBackground()
+        
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
     }
 }
 

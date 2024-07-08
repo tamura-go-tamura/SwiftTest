@@ -10,6 +10,7 @@
 		D606519A2C073E1A0009F4E5 /* SpeedmeterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */; };
 		D606519C2C073E370009F4E5 /* SpeedMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606519B2C073E370009F4E5 /* SpeedMeterView.swift */; };
 		D606519E2C073FFD0009F4E5 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D606519D2C073FFD0009F4E5 /* Triangle.swift */; };
+		D68BCAEF2C3AA61600591CC6 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68BCAEE2C3AA61600591CC6 /* ProgressView.swift */; };
 		D6CBD0F72C061B3C0038466A /* SwiftTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD0F62C061B3C0038466A /* SwiftTestApp.swift */; };
 		D6CBD0F92C061B3C0038466A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD0F82C061B3C0038466A /* ContentView.swift */; };
 		D6CBD0FB2C061B3D0038466A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6CBD0FA2C061B3D0038466A /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		D60651992C073E1A0009F4E5 /* SpeedmeterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedmeterStyle.swift; sourceTree = "<group>"; };
 		D606519B2C073E370009F4E5 /* SpeedMeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedMeterView.swift; sourceTree = "<group>"; };
 		D606519D2C073FFD0009F4E5 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		D68BCAEE2C3AA61600591CC6 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		D6B525AE2C184F39004943DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D6CBD0F32C061B3C0038466A /* SwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CBD0F62C061B3C0038466A /* SwiftTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestApp.swift; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 			children = (
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D68BCAED2C3AA5FF00591CC6 /* ProgressViews */ = {
+			isa = PBXGroup;
+			children = (
+				D68BCAEE2C3AA61600591CC6 /* ProgressView.swift */,
+			);
+			path = ProgressViews;
 			sourceTree = "<group>";
 		};
 		D6CBD0EA2C061B3C0038466A = {
@@ -180,6 +190,7 @@
 		D6ED95E72C11F8CC00210BCF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D68BCAED2C3AA5FF00591CC6 /* ProgressViews */,
 				D6F4466F2C1EFC7D00A7B06E /* OptionView */,
 				D6ED96002C15452900210BCF /* SpeedMeterViews */,
 				D6ED95FF2C15451700210BCF /* SettingViews */,
@@ -399,6 +410,7 @@
 				D6ED95FC2C15446000210BCF /* LocationManager.swift in Sources */,
 				D6ED95EF2C134A2A00210BCF /* MapViewWithCross.swift in Sources */,
 				D606519A2C073E1A0009F4E5 /* SpeedmeterStyle.swift in Sources */,
+				D68BCAEF2C3AA61600591CC6 /* ProgressView.swift in Sources */,
 				D6ED96072C15576600210BCF /* RouteViewModel.swift in Sources */,
 				D6ED96032C1548FA00210BCF /* MapViewModel.swift in Sources */,
 			);
