@@ -45,8 +45,7 @@ struct GifUIView: UIViewRepresentable {
 
     func updateUIView(_ uiView: UIImageView, context: Context){
         // No update needed
-        let shouldUpdate = Int.random(in: 1...100) == 1
-        if shouldUpdate && abs(uiView.animationDuration - (1/speed)) > 0.1 {
+        if  abs(uiView.animationDuration - (1/speed)) > 0.1 {
             print("Speed update: \(speed)")
             uiView.animationDuration = 1 / speed
             uiView.startAnimating()
