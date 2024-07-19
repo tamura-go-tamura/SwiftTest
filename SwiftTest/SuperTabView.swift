@@ -13,6 +13,18 @@ import AVFoundation
 
 import Foundation;
 
+struct Event: Codable, Identifiable{
+    let id = UUID()
+    let name: String
+    let url: String
+}
+
+struct Message: Codable {
+    let comment: String
+    let events: Array<Event>
+}
+
+
 struct SuperTabView: View {
     
     @State var selectionDate = Date()
@@ -21,9 +33,10 @@ struct SuperTabView: View {
     @StateObject private var speedViewModel: SpeedViewModel = SpeedViewModel()
     @State var distance = CLLocationDistance(floatLiteral: 0.0)
     
-    let openAIKey: String = "";
     @State var messageFromLlm: String = "おはようございます。今日も一日元気に出勤しましょう。";
-    @State var jsonFromLlm: Dictionary<String, Any> = ["content":"test"];
+    @State var jsonFromLlm: Message = Message(comment: "", events: [
+        Event(name: "", url: "")
+    ])
     var speechSynthesizer: AVSpeechSynthesizer = AVSpeechSynthesizer();
     
     var remainingTimeInHour: Double {
@@ -79,50 +92,28 @@ struct SuperTabView: View {
         speechSynthesizer.speak(utterance)
     }
     
-    private func getLlmAns(text: String){
-        if (openAIKey=="" ){
-            return;
-        }
-        let semaphore = DispatchSemaphore (value: 0);
-
-        let parameters = "{\"model\": \"gpt-4o\",\"messages\": [{\"role\": \"system\",\"content\": \"あなたは、朝の通勤途中のサラリーマンに対して元気づけたり、新しい情報を与えたりするアシスタントです。\"},{\"role\": \"user\",\"content\": \"\(text)\"}]}";
-        let postData = parameters.data(using: .utf8)
-        
-        print("=============LLM入力============");
-        print(parameters);
-
-        var request = URLRequest(url: URL(string: "https://api.openai.com/v1/chat/completions")!,timeoutInterval: Double.infinity)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(openAIKey)", forHTTPHeaderField: "Authorization")
-
-        request.httpMethod = "POST"
-        request.httpBody = postData
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-          guard let data = data else {
-            print(String(describing: error))
-            semaphore.signal()
-            return
-          }
-            self.messageFromLlm = String(data: data, encoding: .utf8)!;
-            print("=============LLM出力============")
-            print(String(data: data, encoding: .utf8)!)
-            do{
-                self.jsonFromLlm = try JSONSerialization.jsonObject(
-                    with: self.messageFromLlm.data(using: String.Encoding.utf8)!
-                ) as! Dictionary<String, Any>;
-                let choices: Array = self.jsonFromLlm["choices"] as! Array<Any>;
-                let oneChoice : Dictionary = choices[0] as! Dictionary<String, Any>;
-                let oneMessage: Dictionary = oneChoice["message"] as! Dictionary<String, Any>;
-                self.messageFromLlm = oneMessage["content"] as! String;
-            } catch {
-                self.messageFromLlm = "エラーが発生しました！";
+    private func getLlmAns(latitude: String, longitude: String){
+        let endpoint = "https://1w09ojfeok.execute-api.ap-northeast-1.amazonaws.com/test?latitude=\(latitude)&longitude=\(longitude)";
+        guard let url = URLComponents(string: endpoint) else { return }
+        // HTTPメソッドを実行
+        let task = URLSession.shared.dataTask(with: url.url!) {(data, response, error) in
+            if (error != nil) {
+                print(error!.localizedDescription)
             }
-          semaphore.signal()
-        }
+            guard let _data = data else { return }
 
+            // JSONデコード
+            do{
+                let message = try JSONDecoder().decode(Message.self, from: _data)
+                print("==========message===========\n\(message)")
+                self.messageFromLlm = message.comment;
+                self.jsonFromLlm = message;
+            } catch{
+                return
+            }
+            }
         task.resume()
-        semaphore.wait()
+
     }
     
     
@@ -130,11 +121,11 @@ struct SuperTabView: View {
         
         TabView{
             
-            ProgressView(elapsedDistance: speedViewModel.distance / 1000, remainingDistance: distance/1000)
+            ProgressView(jsonFromLlm: self.jsonFromLlm, elapsedDistance: speedViewModel.distance / 1000, remainingDistance: distance/1000)
                 .tabItem {
-               Image(systemName: "figure.walk.circle.fill")
-               Text("Map")
-           }
+                    Image(systemName: "figure.walk.circle.fill")
+                    Text("Map")
+                }
             
             SpeedmeterView(
                 currentSpeed: $speedViewModel.speed,
@@ -160,7 +151,9 @@ struct SuperTabView: View {
         }
         .onChange(of: mapViewModel.coordinate.latitude) {
             self.calculateDistance(from: speedViewModel.coordinate, to: mapViewModel.coordinate)
-            self.getLlmAns(text: "以下の緯度と経度の場所に関しての本日ならではの耳寄り情報を教えつつ、出勤途中のサラリーマンを激励してください！出力は100文字程度でお願いします。また、緯度と経度について再度述べる必要はありません。経度:\(mapViewModel.coordinate.longitude), 緯度:\(mapViewModel.coordinate.latitude)");
+            self.getLlmAns(latitude: String(mapViewModel.coordinate.latitude), longitude:String(mapViewModel.coordinate.longitude));
+        }
+        .onChange(of: self.messageFromLlm){
             self.speeche(text:self.messageFromLlm);
         }
 

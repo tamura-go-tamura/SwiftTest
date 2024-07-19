@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ProgressView: View {
+    var jsonFromLlm: Message
     var elapsedDistance: Double
     var remainingDistance: Double
     var totalDistance: Double {
@@ -21,7 +22,7 @@ struct ProgressView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                Spacer() // 上部のスペースを確保
+                Spacer(minLength: 100) // 上部のスペースを確保
 
                 VStack(alignment: .center) {
                     HStack {
@@ -82,7 +83,32 @@ struct ProgressView: View {
                 }
                 .frame(width: geometry.size.width * 0.9) // 親ビューの幅の90%に調整
 
-                Spacer() // 下部のスペースを確保
+                Spacer(minLength: 100)
+                
+                
+                NavigationView {
+                    Section{
+                        VStack {
+                            List(jsonFromLlm.events) { event in
+                                
+                                if (event.url != ""){
+                                    NavigationLink(
+                                        destination: WebView(loardUrl: URL(string: event.url)!),
+                                        label: {
+                                            Text(event.name)
+                                            }
+                                    )
+                                }
+                                
+                                
+                                
+                            }.foregroundColor(.accentColor)
+                        }
+                    }
+                    
+                }
+                
+                
             }
             .frame(width: geometry.size.width, height: geometry.size.height) // GeometryReader の幅と高さにフレームを設定
         }

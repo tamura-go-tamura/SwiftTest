@@ -19,6 +19,7 @@
 		D6CBD1122C061B3D0038466A /* SwiftTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD1112C061B3D0038466A /* SwiftTestUITests.swift */; };
 		D6CBD1142C061B3D0038466A /* SwiftTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBD1132C061B3D0038466A /* SwiftTestUITestsLaunchTests.swift */; };
 		D6DCBB892C358A7F00231CAB /* SuperTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DCBB882C358A7F00231CAB /* SuperTabView.swift */; };
+		D6DCBB912C47E3C000231CAB /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DCBB902C47E3C000231CAB /* WebView.swift */; };
 		D6ED95ED2C13414D00210BCF /* MapSelectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED95EC2C13414D00210BCF /* MapSelectingView.swift */; };
 		D6ED95EF2C134A2A00210BCF /* MapViewWithCross.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED95EE2C134A2A00210BCF /* MapViewWithCross.swift */; };
 		D6ED95F52C14B4DC00210BCF /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ED95F42C14B4DC00210BCF /* ConfigurationView.swift */; };
@@ -65,6 +66,7 @@
 		D6CBD1112C061B3D0038466A /* SwiftTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestUITests.swift; sourceTree = "<group>"; };
 		D6CBD1132C061B3D0038466A /* SwiftTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D6DCBB882C358A7F00231CAB /* SuperTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperTabView.swift; sourceTree = "<group>"; };
+		D6DCBB902C47E3C000231CAB /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		D6ED95EC2C13414D00210BCF /* MapSelectingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectingView.swift; sourceTree = "<group>"; };
 		D6ED95EE2C134A2A00210BCF /* MapViewWithCross.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewWithCross.swift; sourceTree = "<group>"; };
 		D6ED95F42C14B4DC00210BCF /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
@@ -102,13 +104,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B118CD55C5229F925EB8F226 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		D68BCAED2C3AA5FF00591CC6 /* ProgressViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +119,6 @@
 				D6CBD1062C061B3D0038466A /* SwiftTestTests */,
 				D6CBD1102C061B3D0038466A /* SwiftTestUITests */,
 				D6CBD0F42C061B3C0038466A /* Products */,
-				B118CD55C5229F925EB8F226 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,6 +171,14 @@
 			path = SwiftTestUITests;
 			sourceTree = "<group>";
 		};
+		D6DCBB8F2C47E3B300231CAB /* WebViews */ = {
+			isa = PBXGroup;
+			children = (
+				D6DCBB902C47E3C000231CAB /* WebView.swift */,
+			);
+			path = WebViews;
+			sourceTree = "<group>";
+		};
 		D6ED95E22C10604100210BCF /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +192,7 @@
 		D6ED95E72C11F8CC00210BCF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D6DCBB8F2C47E3B300231CAB /* WebViews */,
 				D68BCAED2C3AA5FF00591CC6 /* ProgressViews */,
 				D6F4466F2C1EFC7D00A7B06E /* OptionView */,
 				D6ED96002C15452900210BCF /* SpeedMeterViews */,
@@ -408,6 +411,7 @@
 				D6ED95F92C1533FC00210BCF /* DateTimer.swift in Sources */,
 				D6CBD0F72C061B3C0038466A /* SwiftTestApp.swift in Sources */,
 				D6ED95FC2C15446000210BCF /* LocationManager.swift in Sources */,
+				D6DCBB912C47E3C000231CAB /* WebView.swift in Sources */,
 				D6ED95EF2C134A2A00210BCF /* MapViewWithCross.swift in Sources */,
 				D606519A2C073E1A0009F4E5 /* SpeedmeterStyle.swift in Sources */,
 				D68BCAEF2C3AA61600591CC6 /* ProgressView.swift in Sources */,
