@@ -20,7 +20,8 @@ struct SuperTabView: View {
     @StateObject var mapViewModel: MapViewModel = MapViewModel() //目的地点の経度緯度情報
     @StateObject private var speedViewModel: SpeedViewModel = SpeedViewModel()
     @State var distance = CLLocationDistance(floatLiteral: 0.0)
-    
+    @State var totalDistance = CLLocationDistance(floatLiteral: 0.0)
+
     let openAIKey: String = "";
     @State var messageFromLlm: String = "おはようございます。今日も一日元気に出勤しましょう。";
     @State var jsonFromLlm: Dictionary<String, Any> = ["content":"test"];
@@ -59,6 +60,7 @@ struct SuperTabView: View {
             }
             
             DispatchQueue.main.async {
+                self.totalDistance = route.distance + speedViewModel.distance
                 self.distance = route.distance
             }
         }
@@ -130,7 +132,7 @@ struct SuperTabView: View {
         
         TabView{
             
-            ProgressView(elapsedDistance: speedViewModel.distance / 1000, remainingDistance: distance/1000)
+            ProgressView(elapsedDistance: speedViewModel.distance / 1000, remainingDistance: distance/1000, totalDistance: totalDistance/1000, speed: (distance.magnitude/1000.0)/remainingTimeInHour)
                 .tabItem {
                Image(systemName: "figure.walk.circle.fill")
                Text("Map")

@@ -11,12 +11,12 @@ import SwiftUI
 struct ProgressView: View {
     var elapsedDistance: Double
     var remainingDistance: Double
-    var totalDistance: Double {
-        elapsedDistance + remainingDistance
-    }
+    var totalDistance: Double
+    var speed: Double
     var progressPercentage: Double {
         (elapsedDistance / totalDistance) * 100
     }
+    
     
     var body: some View {
         GeometryReader { geometry in
@@ -27,14 +27,14 @@ struct ProgressView: View {
                     HStack {
                         Text("経過距離: \(elapsedDistance, specifier: "%.2f") km")
                         Spacer()
-                        Text("残り距離: \(remainingDistance, specifier: "%.2f") km")
+                        Text("残り距離: \(totalDistance - elapsedDistance, specifier: "%.2f") km")
                     }
                     .padding(.horizontal)
                     
                     Text("\(remainingDistance == 0 ? 100 : Int(progressPercentage))%")
                         .foregroundColor(.black)
                         .padding(.bottom, 5)
-                    
+
                     HStack {
                         Image(systemName: "flag") // 左側のアイコン
                         ZStack(alignment: .leading) {
@@ -81,7 +81,11 @@ struct ProgressView: View {
                     .padding(.horizontal)
                 }
                 .frame(width: geometry.size.width * 0.9) // 親ビューの幅の90%に調整
-
+                Text("\(speed)").opacity(0)
+                GifUIView(gifName: "runner", speed: speed / 10, sleepDuration: 1000)
+                                        .scaleEffect(0.15)
+                                        .frame(width: 10, height: 10)
+                                        .offset(x:(geometry.size.width - 90) * (progressPercentage/100 - 0.5))
                 Spacer() // 下部のスペースを確保
             }
             .frame(width: geometry.size.width, height: geometry.size.height) // GeometryReader の幅と高さにフレームを設定
